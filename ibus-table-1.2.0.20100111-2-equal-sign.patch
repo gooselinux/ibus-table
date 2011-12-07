@@ -1,0 +1,15 @@
+diff -up ibus-table-1.2.0.20100111/engine/tabcreatedb.py.2-equal-sign ibus-table-1.2.0.20100111/engine/tabcreatedb.py
+--- ibus-table-1.2.0.20100111/engine/tabcreatedb.py.2-equal-sign	2010-01-29 14:23:49.603870904 +1000
++++ ibus-table-1.2.0.20100111/engine/tabcreatedb.py	2010-01-29 14:24:51.471841711 +1000
+@@ -173,9 +173,9 @@ def main ():
+     def attribute_parser (f):
+         for l in f:
+             try:
+-                attr,val = unicode (l,"utf-8").strip().split ('=')
++                attr,val = unicode (l,"utf-8").strip().split ('=', 1)
+             except:
+-                attr,val = unicode (l,"utf-8").strip().split ('==')
++                attr,val = unicode (l,"utf-8").strip().split ('==', 1)
+             attr = attr.strip()
+             origin_attr = attr
+             attr = attr.lower()
